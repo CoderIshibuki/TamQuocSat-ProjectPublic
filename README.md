@@ -13,7 +13,7 @@ Hoặc thư mục `Kanban/` chứa các tài liệu tiến độ tương ứng (
 
 ## 🛠️ Công nghệ & Kiến trúc dự kiến
 - **Engine / Ngôn ngữ:** Unity / C#
-- **Multiplayer & Networking:** Photon Quantum / Fish-Net (Server-Authoritative, Deterministic State Synchronization)
-- **Cơ sở dữ liệu (Database - Chặng 1):** PostgreSQL + Dapper/EF Core, Redis Cache, Supabase/PlayFab BaaS
-- **Hệ thống dữ liệu game:** ScriptableObjects + Odin Inspector & Serializer, MessagePack
+- **Multiplayer & Networking:** Fish-Net (FishNet Networking - Server-Authoritative)
+- **Cơ sở dữ liệu & Bộ nhớ đệm:** PostgreSQL + Dapper (Micro-ORM) + Redis Cache
+- **Hệ thống dữ liệu thẻ bài:** ScriptableObjects + Odin Inspector & Serializer + MessagePack
 - **Diễn hoạt & Giao diện (Animation / UI):** GSAP & Motion Animation Libraries
