@@ -17,3 +17,5 @@ Hoặc thư mục `Kanban/` chứa các tài liệu tiến độ tương ứng (
 - **Cơ sở dữ liệu & Bộ nhớ đệm:** PostgreSQL + Dapper (Micro-ORM) + Redis Cache
 - **Hệ thống dữ liệu thẻ bài:** ScriptableObjects + Odin Inspector & Serializer + MessagePack
 - **Diễn hoạt & Giao diện (Animation / UI):** GSAP & Motion Animation Libraries
+
+## Tác giả: Zenith & Phat Tran Vu Hoa
