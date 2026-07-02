@@ -7,6 +7,6 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE UNIQUE INDEX IF NOT EXISTS idx_users_username ON users(username);
 
-COMMENT ON TABLE users IS 'Bảng tài khoản người chơi Tam Quốc Sát';
-COMMENT ON COLUMN users.username IS 'Primary key, unique';
-COMMENT ON COLUMN users.password IS 'Mật khẩu đã mã hóa bằng Argon2id';
+COMMENT ON TABLE users IS 'player table database';
+COMMENT ON COLUMN users.username IS 'primary key, unique';
+COMMENT ON COLUMN users.password IS 'password is encrypted with Argon2id';
