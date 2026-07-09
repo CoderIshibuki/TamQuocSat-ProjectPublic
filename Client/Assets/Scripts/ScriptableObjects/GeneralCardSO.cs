@@ -6,14 +6,29 @@ namespace TamQuocSat.Gameplay.Cards
 {
     public enum FactionType
     {
-        Long,      
+        Long,       
         Lan,        
         Quy,        
         Phung,      
         NguyLinh    
     }
 
-    [CreateAssetMenu(fileName = "CHR001_OngAnhCoKhiHUST", menuName = "TamQuocSat/Character Card SO")]
+    public enum SkillType
+    {
+        Active,     
+        Passive    
+    }
+
+    [System.Serializable]
+    public class CharacterSkill
+    {
+        public string skillName = "Tên kỹ năng";
+        public SkillType skillType = SkillType.Active;
+        [ResizableTextArea]
+        public string description = "Mô tả chi tiết hiệu ứng kỹ năng...";
+    }
+
+    [CreateAssetMenu(fileName = "CHR_MaSo_TenNhanVat", menuName = "TamQuocSat/Character Card SO", order = 1)]
     public class GeneralCardSO : ScriptableObject
     {
         [BoxGroup("Thông tin nhân vật")]
@@ -42,13 +57,26 @@ namespace TamQuocSat.Gameplay.Cards
         [ShowAssetPreview(256, 350)]
         public Sprite fullArtSprite;
 
-        [BoxGroup("Tiểu sử & Kỹ năng")]
+        [BoxGroup("Tiểu sử nhân vật")]
         [ResizableTextArea]
         public string biography = "Sinh viên cơ khí Bách Khoa truyền kỳ, tay cầm cờ lê, đam mê chế tạo...";
 
-        [BoxGroup("Tiểu sử & Kỹ năng")]
-        [ResizableTextArea]
-        public string skillDescriptions = "Chế Tạo: Trong giai đoạn chuẩn bị, có thể bỏ 1 lá bài để đổi lấy 1 trang bị từ chồng bài bỏ...";
+        [BoxGroup("Danh sách Kỹ năng")]
+        public List<CharacterSkill> skills = new List<CharacterSkill>
+        {
+            new CharacterSkill
+            {
+                skillName = "Chế Tạo",
+                skillType = SkillType.Active,
+                description = "Trong giai đoạn chuẩn bị, có thể bỏ 1 lá bài để đổi lấy 1 trang bị từ chồng bài bỏ."
+            },
+            new CharacterSkill
+            {
+                skillName = "Đồ Án Tốt Nghiệp",
+                skillType = SkillType.Passive,
+                description = "Khi bị mất máu đầu tiên trong lượt, tự động rút thêm 1 lá bài."
+            }
+        };
 
         private List<string> GetGenderList() { return new List<string> { "Nam", "Nữ" }; }
     }
